@@ -15,5 +15,22 @@
         <button id="incrementAsync">Increment async</button>
       </p>
     </div>
+    <script>
+      function counter(state, action) {
+        if (typeof state === "undefined") {
+          return 0;
+        }
+      }
+
+      var store = Redux.createStore(counter);
+      var valueEl = document.getElementById("value");
+
+      function render() {
+        valueEl.innerHTML = store.getState().toString();
+      }
+
+      render();
+      store.subscribe(render);
+    </script>
   </body>
 </html>
