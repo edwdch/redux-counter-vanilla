@@ -60,6 +60,14 @@
             store.dispatch({ type: "INCREMENT" });
           }
         });
+
+      document
+        .getElementById("incrementAsync")
+        .addEventListener("click", function () {
+          setTimeout(function () {
+            store.dispatch({ type: "INCREMENT" });
+          }, 1000);
+        });
     </script>
   </body>
 </html>
